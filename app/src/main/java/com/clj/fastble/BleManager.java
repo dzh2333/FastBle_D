@@ -88,6 +88,8 @@ public class BleManager {
             bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             multipleBluetoothController = new MultipleBluetoothController();
             bleScanRuleConfig = new BleScanRuleConfig();
+
+            handlerMsg();
         }
     }
 
@@ -599,6 +601,7 @@ public class BleManager {
                       byte[] data,
                       BleWriteCallback callback) {
 
+        //if this ${bleDevice} is disconnect you need clear all writeArrayList msg and clear runnable
 
         writeArrayList.add(new Runnable() {
             @Override
