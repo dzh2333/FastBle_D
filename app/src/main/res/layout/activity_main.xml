@@ -1,120 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:animateLayoutChanges="true"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:title="@string/app_name"
-        app:titleTextColor="@android:color/white" />
-
-    <LinearLayout
-        android:id="@+id/layout_setting"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#eeeeee"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:fitsSystemWindows="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="@string/scan_setting"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="12sp" />
-
-        <EditText
-            android:id="@+id/et_name"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/setting_name"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:textSize="13sp" />
+            android:layout_height="?attr/actionBarSize" />
 
-        <EditText
-            android:id="@+id/et_mac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/setting_mac"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:textSize="13sp" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <EditText
-            android:id="@+id/et_uuid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/setting_uuid"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:textSize="13sp" />
+    <include layout="@layout/content_main" />
 
-        <Switch
-            android:id="@+id/sw_auto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="AutoConnect ?"
-            android:textSize="13sp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/txt_setting"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="#eeeeee"
-        android:padding="10dp" />
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <Button
-            android:id="@+id/btn_scan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/start_scan" />
-
-        <ImageView
-            android:id="@+id/img_loading"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:src="@mipmap/ic_loading"
-            android:visibility="invisible" />
-
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/list_device"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="0.5dp"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:scrollbars="none" />
-
-
-</LinearLayout>
-
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
